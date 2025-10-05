@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stonecutter"
+    },
+    "C": {
+      "item": "minecraft:cyan_concrete"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    " C ",
+    " #C",
+    "III"
+  ],
+  "result": {
+    "item": "makitasmod:makitas_block"
+  },
+  "show_notification": true
+}
