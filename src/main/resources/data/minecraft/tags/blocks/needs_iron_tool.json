@@ -1,5 +1,8 @@
 {
   "values": [
-    "makitasmod:makitas_block"
+    "makitasmod:makitas_iron_makita_block",
+    "makitasmod:makitas_gold_makita_block",
+    "makitasmod:makitas_diamond_makita_block",
+    "makitasmod:makitas_end_makita_block"
   ]
 }
