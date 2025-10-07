@@ -1,6 +1,7 @@
 package net.genachec.makitasmod.block;
 
 import net.genachec.makitasmod.abstracts.MakitasModObject;
+import net.genachec.makitasmod.block.custom.MakitaBlock;
 import net.genachec.makitasmod.interfaces.MakitasModBlockInterface;
 import net.genachec.makitasmod.item.MakitasModItems;
 import net.minecraft.world.item.BlockItem;
@@ -16,12 +17,14 @@ import java.util.function.Supplier;
 public class MakitasModBlocks extends MakitasModObject implements MakitasModBlockInterface {
     public static final DeferredRegister<Block> BLOCKS = createRegistry(MakitasModBlocks.class);
 
-    private static final BlockBehaviour.Properties MAKITAS_BASE_PROPS =
-            BlockBehaviour.Properties.copy(Blocks.ANVIL).noOcclusion();
-
-    public static final RegistryObject<Block> MAKITA_BLOCK =
-                registerBlock("makitas_block",
-                            () -> new Block(MAKITAS_BASE_PROPS));
+    public static final RegistryObject<Block> IRON_MAKITA_BLOCK =
+            registerBlock("makitas_iron_makita_block", MakitaBlock::new);
+    public static final RegistryObject<Block> GOLD_MAKITA_BLOCK =
+            registerBlock("makitas_gold_makita_block", MakitaBlock::new);
+    public static final RegistryObject<Block> DIAMOND_MAKITA_BLOCK =
+            registerBlock("makitas_diamond_makita_block", MakitaBlock::new);
+    public static final RegistryObject<Block> END_MAKITA_BLOCK =
+            registerBlock("makitas_end_makita_block", MakitaBlock::new);
 
     private static <T extends  Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

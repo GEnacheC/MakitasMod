@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "makitasmod:makitas_block"
+          "name": "makitasmod:makitas_gold_makita_block"
         }
       ],
       "conditions": [
@@ -15,5 +15,5 @@
       ]
     }
   ],
-  "random_sequence": "makitasmod:blocks/makitas_block"
+  "random_sequence": "makitasmod:makitas_gold_makita_block"
 }
