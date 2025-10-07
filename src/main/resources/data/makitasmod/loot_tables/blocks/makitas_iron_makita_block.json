@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "makitasmod:makitas_block"
+          "name": "makitasmod:makitas_iron_makita_block"
         }
       ],
       "conditions": [

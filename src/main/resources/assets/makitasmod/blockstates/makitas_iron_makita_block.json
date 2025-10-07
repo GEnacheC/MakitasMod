@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "makitasmod:block/makitas_iron_makita_block" }
+    "facing=west": { "model": "makitasmod:block/makitas_iron_makita_block" },
+    "facing=north": { "model": "makitasmod:block/makitas_iron_makita_block", "y": 90 },
+    "facing=east": { "model": "makitasmod:block/makitas_iron_makita_block", "y": 180 },
+    "facing=south": { "model": "makitasmod:block/makitas_iron_makita_block", "y": 270 }
   }
 }
