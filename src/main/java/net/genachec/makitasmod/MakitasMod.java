@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.genachec.makitasmod.block.MakitasModBlocks;
 import net.genachec.makitasmod.item.MakitasModCreativeTabs;
 import net.genachec.makitasmod.item.MakitasModItems;
+import net.genachec.makitasmod.sound.MakitasModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -36,7 +37,7 @@ public class MakitasMod
         MakitasModCreativeTabs.register(modEventBus);
         MakitasModItems.register(MakitasModItems.ITEMS, modEventBus);
         MakitasModBlocks.register(MakitasModBlocks.BLOCKS, modEventBus);
-
+        MakitasModSounds.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

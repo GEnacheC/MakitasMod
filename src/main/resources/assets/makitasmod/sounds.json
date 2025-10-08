@@ -1,0 +1,14 @@
+{
+  "makita_switch": {
+    "subtitles": "sounds.makitasmod.makita_switch",
+    "sounds": [
+      "makitasmod:makita_switch"
+    ]
+  },
+  "makita_ominous": {
+    "subtitles": "sounds.makitasmod.makita_ominous",
+    "sounds": [
+      "makitasmod:makita_ominous"
+    ]
+  }
+}

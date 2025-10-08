@@ -1,7 +1,10 @@
 {
   "creativetab.makitasmod_tab": "Makitas Mod",
+
   "block.makitasmod.makitas_iron_makita_block": "Iron Makita",
   "block.makitasmod.makitas_gold_makita_block": "Golden Makita",
   "block.makitasmod.makitas_diamond_makita_block": "Diamond Makita",
-  "block.makitasmod.makitas_end_makita_block": "Draconic Makita"
+  "block.makitasmod.makitas_end_makita_block": "Draconic Makita",
+
+  "sounds.makitasmod.makita_started": "Makita Sounds"
 }
