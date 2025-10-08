@@ -5,14 +5,14 @@
     "#": {
       "item": "makitasmod:makitas_gold_makita_block"
     },
-    "D": {
+    "U": {
       "item": "minecraft:diamond"
     }
   },
   "pattern": [
-    "DDD",
-    "D#D",
-    "DDD"
+    "UUU",
+    "U#U",
+    "UUU"
   ],
   "result": {
     "item": "makitasmod:makitas_diamond_makita_block"

@@ -19,10 +19,9 @@ public class MakitasModCreativeTabs {
                     .icon(() -> new ItemStack(MakitasModItems.ITEMS.getEntries().stream().findFirst().get().get()))
                     .title(Component.translatable("creativetab.makitasmod_tab"))
                     .displayItems(((pParams, pOut) -> {
-                        MakitasModBlocks.BLOCKS
-                                .getEntries()
-                                .forEach((p) ->
-                                        pOut.accept(p.get()));
+                        MakitasModBlocks.BLOCKS.getEntries()
+                                .stream()
+                                .map(RegistryObject::get).forEach(pOut::accept);
                     }))
                     .build()
             );

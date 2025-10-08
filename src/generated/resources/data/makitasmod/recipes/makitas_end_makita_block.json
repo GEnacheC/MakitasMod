@@ -5,11 +5,11 @@
     "#": {
       "item": "makitasmod:makitas_diamond_makita_block"
     },
-    "N": {
-      "item": "minecraft:netherite_ingot"
-    },
     "E": {
       "item": "minecraft:dragon_egg"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
     },
     "S": {
       "item": "minecraft:nether_star"

@@ -5,14 +5,14 @@
     "#": {
       "item": "makitasmod:makitas_iron_makita_block"
     },
-    "G": {
+    "U": {
       "item": "minecraft:gold_ingot"
     }
   },
   "pattern": [
-    "GGG",
-    "G#G",
-    "GGG"
+    "UUU",
+    "U#U",
+    "UUU"
   ],
   "result": {
     "item": "makitasmod:makitas_gold_makita_block"
