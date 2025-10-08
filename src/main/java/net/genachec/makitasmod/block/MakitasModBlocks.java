@@ -36,7 +36,8 @@ public class MakitasModBlocks extends MakitasModObject implements MakitasModBloc
 
 
     private static <T extends  Block>void registerBlockItem(String name, RegistryObject<T> block){
-        MakitasModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        MakitasModItems.ITEMS.register(name,
+                () -> new BlockItem(block.get(), new Item.Properties().stacksTo(MakitaBlock.MAX_STACK)));
     }
 
 }

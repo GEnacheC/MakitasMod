@@ -2,6 +2,7 @@ package net.genachec.makitasmod;
 
 import com.mojang.logging.LogUtils;
 import net.genachec.makitasmod.block.MakitasModBlocks;
+import net.genachec.makitasmod.entity.MakitasModEntities;
 import net.genachec.makitasmod.item.MakitasModCreativeTabs;
 import net.genachec.makitasmod.item.MakitasModItems;
 import net.minecraft.client.Minecraft;
@@ -36,6 +37,8 @@ public class MakitasMod
         MakitasModCreativeTabs.register(modEventBus);
         MakitasModItems.register(MakitasModItems.ITEMS, modEventBus);
         MakitasModBlocks.register(MakitasModBlocks.BLOCKS, modEventBus);
+
+        MakitasModEntities.ENTITIES.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

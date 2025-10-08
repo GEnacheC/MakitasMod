@@ -2,6 +2,7 @@ package net.genachec.makitasmod.abstracts;
 
 import net.genachec.makitasmod.interfaces.MakitasModBaseInterface;
 import net.genachec.makitasmod.interfaces.MakitasModBlockInterface;
+import net.genachec.makitasmod.interfaces.MakitasModEntityInterface;
 import net.genachec.makitasmod.interfaces.MakitasModItemsInterface;
 import net.genachec.makitasmod.MakitasMod;
 import net.minecraft.world.entity.EntityType;
@@ -22,7 +23,7 @@ public abstract class MakitasModObject {
             return (IForgeRegistry<B>) ForgeRegistries.ITEMS;
         } else if (MakitasModBlockInterface.class.isAssignableFrom(clazz)) {
             return (IForgeRegistry<B>) ForgeRegistries.BLOCKS;
-        } else if (EntityType.class.isAssignableFrom(clazz)) {
+        } else if (MakitasModEntityInterface.class.isAssignableFrom(clazz)) {
             return (IForgeRegistry<B>) ForgeRegistries.ENTITY_TYPES;
         }
         throw new IllegalArgumentException("Tipo desconhecido: " + clazz);
