@@ -1,10 +1,10 @@
 package net.genachec.makitasmod.abstracts;
 
-import net.genachec.makitasmod.interfaces.MakitasModBaseInterface;
-import net.genachec.makitasmod.interfaces.MakitasModBlockInterface;
-import net.genachec.makitasmod.interfaces.MakitasModItemsInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModBaseInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModBlockInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModEntityInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModItemsInterface;
 import net.genachec.makitasmod.MakitasMod;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +22,7 @@ public abstract class MakitasModObject {
             return (IForgeRegistry<B>) ForgeRegistries.ITEMS;
         } else if (MakitasModBlockInterface.class.isAssignableFrom(clazz)) {
             return (IForgeRegistry<B>) ForgeRegistries.BLOCKS;
-        } else if (EntityType.class.isAssignableFrom(clazz)) {
+        } else if (MakitasModEntityInterface.class.isAssignableFrom(clazz)) {
             return (IForgeRegistry<B>) ForgeRegistries.ENTITY_TYPES;
         }
         throw new IllegalArgumentException("Tipo desconhecido: " + clazz);

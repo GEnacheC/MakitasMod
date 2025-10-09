@@ -19,6 +19,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class MakitaBlock extends HorizontalDirectionalBlock {
 
+    public static final int MAX_STACK = 1;
+
     public MakitaBlock() {
         super(
                 BlockBehaviour.Properties.copy(Blocks.ANVIL)
