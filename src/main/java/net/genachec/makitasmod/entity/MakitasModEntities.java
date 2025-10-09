@@ -1,7 +1,7 @@
 package net.genachec.makitasmod.entity;
 
 import net.genachec.makitasmod.abstracts.MakitasModObject;
-import net.genachec.makitasmod.interfaces.MakitasModEntityInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModEntityInterface;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.registries.DeferredRegister;
 

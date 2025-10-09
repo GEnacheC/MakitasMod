@@ -2,13 +2,11 @@ package net.genachec.makitasmod.block;
 
 import net.genachec.makitasmod.abstracts.MakitasModObject;
 import net.genachec.makitasmod.block.custom.MakitaBlock;
-import net.genachec.makitasmod.interfaces.MakitasModBlockInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModBlockInterface;
 import net.genachec.makitasmod.item.MakitasModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

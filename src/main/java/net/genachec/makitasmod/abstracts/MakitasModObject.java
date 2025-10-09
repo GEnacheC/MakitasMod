@@ -1,11 +1,10 @@
 package net.genachec.makitasmod.abstracts;
 
-import net.genachec.makitasmod.interfaces.MakitasModBaseInterface;
-import net.genachec.makitasmod.interfaces.MakitasModBlockInterface;
-import net.genachec.makitasmod.interfaces.MakitasModEntityInterface;
-import net.genachec.makitasmod.interfaces.MakitasModItemsInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModBaseInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModBlockInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModEntityInterface;
+import net.genachec.makitasmod.interfaces.registers.MakitasModItemsInterface;
 import net.genachec.makitasmod.MakitasMod;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
