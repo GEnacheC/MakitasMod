@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -27,6 +28,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class MakitaBlock extends HorizontalDirectionalBlock {
+    public static final BooleanProperty ON = BooleanProperty.create("on");
     private static final int RANGE = 5;
     private static final int TICK_DELAY = 100;
     public MakitaBlock() {
@@ -35,7 +37,10 @@ public class MakitaBlock extends HorizontalDirectionalBlock {
                         .strength(4.0F, 1200.0F)
                         .noOcclusion()
         );
-        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.defaultBlockState()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(ON, false)
+        );
     }
 
     @Override
@@ -56,10 +61,15 @@ public class MakitaBlock extends HorizontalDirectionalBlock {
     public InteractionResult use(BlockState state, Level world, BlockPos pos,
                                  Player player, InteractionHand hand, BlockHitResult hit) {
 
-        world.playSound(null, pos, MakitasModSounds.MAKITA_SWITCH.get(), SoundSource.BLOCKS, 0.7f, 0.7f);
-        world.playSound(null, pos, MakitasModSounds.MAKITA_OMINOUS.get(), SoundSource.BLOCKS, 0.5f, 0.5f);
         if (!world.isClientSide) {
-            player.sendSystemMessage(Component.literal("Os cara tão no teto..."));
+            boolean newState = !state.getValue(ON);
+            world.setBlock(pos, state.setValue(ON, newState), 3);
+
+            world.playSound(null, pos, MakitasModSounds.MAKITA_SWITCH.get(), SoundSource.BLOCKS, 0.7f, 0.7f);
+            if (newState){
+                world.playSound(null, pos, MakitasModSounds.MAKITA_OMINOUS.get(), SoundSource.BLOCKS, 0.5f, 0.5f);
+                player.sendSystemMessage(Component.literal("Os cara tão no teto..."));
+            }
         }
 
         return InteractionResult.SUCCESS;
@@ -72,16 +82,18 @@ public class MakitaBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, ON);
     }
 
     @Override
     public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
-        List<Player> players = world.getEntitiesOfClass(Player.class,
-                new AABB(pos.offset(-RANGE, -RANGE, -RANGE), pos.offset(RANGE + 1, RANGE + 1, RANGE + 1)));
+        if (state.getValue(MakitaBlock.ON)) {
+            List<Player> players = world.getEntitiesOfClass(Player.class,
+                    new AABB(pos.offset(-RANGE, -RANGE, -RANGE), pos.offset(RANGE + 1, RANGE + 1, RANGE + 1)));
 
-        for (Player player : players) {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, TICK_DELAY, 1, false, false, true));
+            for (Player player : players) {
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, TICK_DELAY, 1, false, false, true));
+            }
         }
 
         world.scheduleTick(pos, this, TICK_DELAY);
